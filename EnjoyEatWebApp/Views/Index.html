@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link href="../Content/jquery-ui.structure.min.css" rel="stylesheet" />
+    <link href="../Content/jquery-ui.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <link href="../Content/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.material.min.css" />
+    <script src="http://cdn.kendostatic.com/2015.1.429/js/kendo.all.min.js"></script>
+    <script src="../Scripts/kendowidget.js"></script>
+    <script src="../Scripts/index.js"></script>
+    <link href="../Content/main.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div data-theme="a" data-role="page" id="index">
+        <div data-role="header">
+            <h1>K Ticket</h1>
+            <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
+            <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <h3>查詢個人訂票</h3>
+                        <label for="customerphone" class="ui-hidden-accessible">請輸入您手機:</label>
+                        <input type="text" name="customerphone" id="customerphone" value="" placeholder="手機號碼" data-theme="a">
+                        <button type="submit" id="Customersearchsubmit" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-left ui-icon-check">查詢</button>
+                    </div>
+                </form>
+            </div>
+            <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">查詢個人訂票紀錄</a>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#index" data-icon="plus">開始訂票</a></li>
+                    <li><a href="#edit" data-icon="check" >關於我們</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="forms" data-role="view" data-title="Form Elements" data-init="initForm" data-use-native-scrolling="true">
+            <form action="./index.html">
+                <ul data-role="listview" data-style="inset">
+                    <li>
+                        <label>
+                            上車地點
+                        </label>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <select id="AboardArea">
+                                    <option value="First Option">上車區域</option>
+                                    <option value="1">北桃竹苗區</option>
+                                    <option value="2">台中區</option>
+                                    <option value="3">彰化南投區</option>
+                                    <option value="4">雲林嘉義區</option>
+                                    <option value="5">南高屏區</option>
+                                </select>
+                            </div>
+                            <div class="ui-block-b">
+                                <select id="AboardStation">
+                                    <option value="First Option">上車站</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>
+                            下車地點
+                        </label>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <select id="GetoffArea">
+                                    <option value="First Option">下車區域</option>
+                                    <option value="1">北桃竹苗區</option>
+                                    <option value="2">台中區</option>
+                                    <option value="3">彰化南投區</option>
+                                    <option value="4">雲林嘉義區</option>
+                                    <option value="5">南高屏區</option>
+                                </select>
+                            </div>
+                            <div class="ui-block-b">
+                                <select id="GetoffStation">
+                                    <option value="First Option">下車站</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>
+                            乘車日期
+                        </label>
+                        <input id="Date" type="date" value="2015-06-26" />
+                    </li>
+                    <li>
+                        <label>
+                            乘車時間
+                            <input id="Time" type="hidden" />
+                        </label>
+                        <div class="ui-grid-c">
+                            <div class="ui-block-a">
+                                <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+                                    <option value="0">00:00 ~ 06:00</option>
+
+                                </select>
+                            </div>
+                            <div class="ui-block-b">
+                                <select name="select-choice-b" id="select-choice-b" data-native-menu="false">
+                                    <option value="0">06:00 ~ 12:00</option>
+
+                                </select>
+                            </div>
+                            <div class="ui-block-c">
+                                <select name="select-choice-c" id="select-choice-c" data-native-menu="false">
+                                    <option value="0">12:00 ~ 18:00</option>
+
+                                </select>
+                            </div>
+                            <div class="ui-block-d">
+                                <select name="select-choice-d" id="select-choice-d" data-native-menu="false">
+                                    <option value="0">18:00 ~ 24:00</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li hidden>
+                        <label>
+                            班次
+                            <input id="Number" type="text" placeholder="班次" readonly />
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            單價
+                            <input id="Price" type="text" placeholder="單價" readonly />
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            訂票張數
+                            <input id="Quantity" type="number" />
+                        </label>
+                    </li>
+                    <li>
+                        <label data-icon="check">
+                            購票人姓名
+                            <input id="Name" type="text" placeholder="姓名" />
+                        </label>
+                    </li>
+                    <li>
+                        <label data-icon="check">
+                            手機
+                            <input id="Phone" type="text" placeholder="手機" />
+                        </label>
+                    </li>
+                    <li>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <button id="submit">送出</button>
+                            </div>
+                            <div class="ui-block-b">
+                                <button id="clear" data-theme="b">清除</button>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <script>
+            function initForm() {
+                var body = $(".km-pane");
+
+                if (kendo.ui.DropDownList) {
+                    $("#dropdown").kendoDropDownList({
+                        // The options are needed only for the desktop demo, remove them for mobile.
+                        popup: { appendTo: body },
+                        animation: { open: { effects: body.hasClass("km-android") ? "fadeIn" : body.hasClass("km-ios") || body.hasClass("km-wp") ? "slideIn:up" : "slideIn:down" } }
+                    });
+                }
+
+                if (kendo.ui.Slider) {
+                    $("#slider").kendoSlider({ tooltip: { enabled: false } });
+                }
+            }
+        </script>
+        <script>
+            var app = new kendo.mobile.Application(document.body);
+        </script>
+        <div data-role="footer" style="text-align:center;">
+            2015 ASP.NET by KuasMis&reg;
+        </div>
+    </div>
+    <!-- Page 2 -->
+    <div data-role="page" id="search">
+        <div data-role="header">
+            <h1>查詢訂票</h1>
+            <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
+        </div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#index" data-icon="plus">開始訂票</a></li>
+                <li><a href="#edit" data-icon="check">關於我們</a></li>
+            </ul>
+        </div>
+        <div class="content-pane">
+            <div id="grid"></div>
+        </div>
+        <div data-role="footer" style="text-align:center;">
+            2015 ASP.NET by KuasMis&reg;
+        </div>
+    </div>
+    <!-- Page 3 -->
+    <div data-role="page" id="edit">
+        <div data-role="header">
+            <h1>聯絡我們</h1>
+            <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
+            <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <h3>查詢個人訂票</h3>
+                        <label for="customerphone" class="ui-hidden-accessible">請輸入您手機:</label>
+                        <input type="text" name="customerphone" id="customerphone" value="" placeholder="手機號碼" data-theme="a">
+                        <button type="submit" id="Customersearchsubmit" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-left ui-icon-check">查詢</button>
+                    </div>
+                </form>
+            </div>
+            <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">查詢個人訂票紀錄</a>
+        </div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#index" data-icon="plus">開始訂票</a></li>
+                <li><a href="#edit" data-icon="check">關於我們</a></li>
+            </ul>
+        </div>
+        <div class="content-pane"> 
+                <div data-role="collapsible">
+                    <h1>關於K訂票</h1>
+                    <p>我們是一個充滿熱情的訂票網站 :)</p>
+                </div>
+            </div>
+        <div class="content-pane">
+            <div data-role="collapsible">
+                <h1>人才招募</h1>
+                <p>請聯絡人資部A經理</p>
+                <p>Tel: 0800-000-123轉123 </p>
+            </div>
+        </div>
+        <div class="content-pane">
+            <div data-role="collapsible">
+                <h1>聯絡資訊</h1>
+                <p>EMail: XXX@mail.com</p>
+                <p>Tel: 123456789 </p>
+            </div>
+        </div>
+        
+        <div data-role="footer" style="text-align:center;">
+            2015 ASP.NET by KuasMis&reg;
+        </div>
+    </div>
+    <!-- Page 4 -->
+    <div data-role="page" id="Customersearch">
+        <div data-role="header">
+            <h1>查詢訂票</h1>
+            <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
+            <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <h3>查詢個人訂票</h3>
+                        <label for="customerphone" class="ui-hidden-accessible">請輸入您手機:</label>
+                        <input type="text" name="customerphone" id="customerphone" value="" placeholder="手機號碼" data-theme="a">
+                        <button type="submit" id="Customersearchsubmit" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-left ui-icon-check">查詢</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="content-pane">
+            <div id="grid2"></div>
+        </div>
+        <div data-role="footer" style="text-align:center;">
+            2015 ASP.NET by KuasMis&reg;
+        </div>
+    </div>
+    <!-- dialog-->
+    <div id="addialog">
+        <p style="text-align:center;">訂票成功!</p>
+    </div>
+    <div id="searchdialog">
+        <p style="text-align:center;">查無此訂票!</p>
+    </div>
+</body>
+</html>
