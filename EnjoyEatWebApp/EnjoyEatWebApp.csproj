@@ -144,6 +144,10 @@
     <Content Include="App_Data\MidTermExamDB_log.ldf">
       <DependentUpon>MidTermExamDB.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\ReservationOrder.mdf" />
+    <Content Include="App_Data\ReservationOrder_log.ldf">
+      <DependentUpon>ReservationOrder.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\jquery-ui.structure.min.css" />
     <Content Include="Content\jquery.mobile-1.4.5.min.css" />
@@ -171,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\RestaurantController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="data\data.aspx.cs">
       <DependentUpon>data.aspx</DependentUpon>

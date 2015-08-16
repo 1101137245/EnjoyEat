@@ -1,4 +1,5 @@
 ﻿using EnjoyEatCore.Dao.Base;
+using EnjoyEatCore.Dao.Interface;
 using EnjoyEatCore.Dao.Mapper;
 using EnjoyEatCore.DomainObject;
 using Spring.Data.Common;
@@ -70,7 +71,7 @@ namespace EnjoyEatCore.Dao.Implement
         public IList<Ticket> GetAllTicket()
         {
             string command = @"SELECT * FROM Ticket ORDER BY Ticket_Id ASC";
-            IList<Ticket> ticket = ExecuteQueryWithRowMapper(command);
+            IList<Ticket> ticket = ExecuteQueryWithRowMapper(command);            
             return ticket;
         }
 

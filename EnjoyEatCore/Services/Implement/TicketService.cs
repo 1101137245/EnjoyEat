@@ -1,5 +1,5 @@
-﻿using EnjoyEatCore.Dao;
-using EnjoyEatCore.Services.Implement;
+﻿using EnjoyEatCore.Dao.Interface;
+using EnjoyEatCore.Services.Interface;
 using EnjoyEatCore.DomainObject;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EnjoyEatCore.Services.Implement
 {
-    public class TicketService : ITicketService
+    public partial class TicketService : ITicketService
     {
         public ITicketDao TicketDao { get; set; }
 
@@ -33,12 +33,7 @@ namespace EnjoyEatCore.Services.Implement
                 TicketDao.DeleteTicket(ticket);
             }
         }
-
-        public IList<Ticket> GetAllTicket()
-        {
-            return TicketDao.GetAllTicket();
-        }
-
+         
         public Ticket GetTicketByName(string phone)
         {
             return TicketDao.GetTicketByName(phone);

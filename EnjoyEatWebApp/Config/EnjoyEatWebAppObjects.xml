@@ -12,6 +12,18 @@
   <object id="ticketDao" type="EnjoyEatCore.Dao.Implement.TicketDao, EnjoyEatCore">
     <property name="AdoTemplate" ref="adoTemplate" />
   </object>
+
+  <object id="restaurantController" scope="request" singleton="false" type="EnjoyEatWebApp.Controllers.RestaurantController, EnjoyEatWebApp">
+    <property name="RestaurantService" ref="restaurantService" />
+  </object>
+
+  <object id="restaurantService" type="EnjoyEatCore.Services.Implement.RestaurantService.RestaurantService, EnjoyEatCore">
+    <property name="RestaurantDao" ref="restaurantDao" />
+  </object>
+
+  <object id="restaurantDao" type="EnjoyEatCore.Dao.Implement.RestaurantDao.RestaurantDao, EnjoyEatCore">
+    <property name="AdoTemplate" ref="adoTemplate" />
+  </object>
   
 
 </objects>

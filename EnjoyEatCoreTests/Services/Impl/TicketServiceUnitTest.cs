@@ -1,6 +1,6 @@
 ﻿using Core;
 using EnjoyEatCore.DomainObject;
-using EnjoyEatCore.Services;
+using EnjoyEatCore.Services.Interface;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Spring.Context;
 using Spring.Testing.Microsoft;

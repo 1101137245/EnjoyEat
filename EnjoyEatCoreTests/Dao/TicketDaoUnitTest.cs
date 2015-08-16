@@ -1,4 +1,4 @@
-﻿using EnjoyEatCore.Dao;
+﻿using EnjoyEatCore.Dao.Interface;
 using EnjoyEatCore.DomainObject;
 using EnjoyEatCore.Services.Implement;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
