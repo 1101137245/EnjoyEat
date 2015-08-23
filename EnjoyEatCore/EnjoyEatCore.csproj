@@ -65,13 +65,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\Base\GenerateRowMapper.cs" />
+    <Compile Include="Dao\Base\SqlBuilder.cs" />
+    <Compile Include="Dao\Base\ConvertDB.cs" />
     <Compile Include="Dao\Base\BaseDao.cs" />
+    <Compile Include="Dao\Implement\SingleDao.cs" />
     <Compile Include="Dao\Implement\Restaurant\GetAllRestaurant.cs" />
     <Compile Include="Dao\Implement\TicketDao.cs" />
     <Compile Include="Dao\Base\GenericDao.cs" />
     <Compile Include="Dao\Interface\IMemberDao.cs" />
     <Compile Include="Dao\Interface\ICommunityDao.cs" />
     <Compile Include="Dao\Interface\IBSMDao.cs" />
+    <Compile Include="Dao\Interface\ISingleDao.cs" />
     <Compile Include="Dao\Interface\IRAODao.cs" />
     <Compile Include="Dao\Interface\IRestaurantDao.cs" />
     <Compile Include="Dao\Interface\ITicketDao.cs" />

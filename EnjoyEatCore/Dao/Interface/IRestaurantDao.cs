@@ -9,6 +9,6 @@ namespace EnjoyEatCore.Dao.Interface
 {
     public interface IRestaurantDao
     {
-        IList<Restaurant> GetAllRestaurant();
+        IList<Restaurant> GetAllRestaurant(Restaurant obj);
     }
 }

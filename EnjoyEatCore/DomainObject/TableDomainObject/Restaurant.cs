@@ -3,6 +3,11 @@
     public class Restaurant
     {
         /// <summary>
+        /// 資料表名稱
+        /// </summary>
+        public string TABLE_NAME { get { return "Restaurant"; } }
+        
+        /// <summary>
         /// 餐廳編號
         /// </summary>
         public string Restaurant_ID { get; set; }
@@ -106,5 +111,10 @@
         /// 地區編號
         /// </summary>
         public string Region_ID { get; set; }
+
+        public void PK_Restaurant(string Restaurant_ID)
+        {
+
+        }
     }
 }

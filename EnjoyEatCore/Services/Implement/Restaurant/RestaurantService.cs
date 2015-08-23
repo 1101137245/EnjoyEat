@@ -15,7 +15,8 @@ namespace EnjoyEatCore.Services.Implement.RestaurantService
 
         public IList<Restaurant> GetAllRestaurant()
         {
-            IList<Restaurant> restaurant = RestaurantDao.GetAllRestaurant();
+            Restaurant obj = new Restaurant();
+            IList<Restaurant> restaurant = RestaurantDao.GetAllRestaurant(obj);
             return restaurant;
         }
     }

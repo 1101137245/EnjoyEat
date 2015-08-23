@@ -16,7 +16,7 @@
   <!--<db:provider id="dbProvider" provider="SqlServer-2.0"
     connectionString="Data Source=(LocalDB)\v11.0;Initial Catalog=MidTermExamDB;Integrated Security=True;MultipleActiveResultSets=True;"/>-->
   <db:provider id="dbProvider" provider="SqlServer-2.0"
-    connectionString="Data Source=(LocalDB)\v11.0;Initial Catalog=ReservationOrder;Integrated Security=True;MultipleActiveResultSets=True;"/>
+    connectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=D:\專題\EnjoyEat\EnjoyEatProject\EnjoyEatProject\EnjoyEatWebApp\App_Data\ReservationOrder.mdf;Integrated Security=True;"/>
   <object id="adoTemplate" type="Spring.Data.Generic.AdoTemplate, Spring.Data">
     <property name="DbProvider" ref="dbProvider"/>
     <property name="DataReaderWrapperType" value="Spring.Data.Support.NullMappingDataReader, Spring.Data"/>
