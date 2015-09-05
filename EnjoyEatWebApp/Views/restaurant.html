@@ -1,0 +1,796 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>樂食 - Enjoy eat!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <link href='fonts/cwTeXHei-zhonly.ttf' rel='stylesheet' type='text/css'>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet">
+  <link href="../Content/bootstrap.css" rel="stylesheet">
+	<link href="../Content/main.css" rel="stylesheet">
+  <link href="../Content/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="../Content/restaurant.css">
+
+  <!-- Fav and touch icons -->
+  <script type="text/javascript" src="../Scripts/jquery.min.js"></script>
+  <script type="text/javascript" src="../Scripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../Scripts/scripts.js"></script>
+  <script type="text/javascript" src="../Scripts/main.js"></script>
+  <script src="../Scripts/modernizr.custom.min.js"></script>
+  <script src="../Scripts/jquery-1.10.2.min.js"></script>
+  <script src="../Scripts/jquery-ui-1.10.3.custom.min.js"></script>
+  <script type="text/javascript" src="../Scripts/restaurant.js"></script>
+  <link href="../Content/jquery.booklet.latest.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
+  <script type="text/javascript" src="../Scripts/jquery-2.1.0.min.js"></script>
+  <script type="text/javascript" src="../Scripts/jquery-ui-1.10.4.min.js"></script>
+  <script type="text/javascript" src="../Scripts/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../Scripts/jquery.booklet.latest.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+  <script type="text/javascript" src="../Scripts/jquery.slimscroll.min.js"></script>
+  <script type="text/javascript" src="../Scripts/jquery.fullPage.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../Content/jquery.fullPage.css" />
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+        anchors: ['firstPage'],
+        // sectionsColor: ['#4A6FB1'],
+        autoScrolling: false,
+        css3: true,
+        fitToSection: false
+      });
+    });
+  </script>
+</head>
+
+
+<body style="background-color:rgba(240,239,238,0.8);">
+      <div class="container-fluid coco">
+        <nav class="navbar navbar-default" role="navigation" style=" margin-top: 20px;">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+              </button>
+            <a class="navbar-brand" style=" padding-top: 0px; " href="#"><img src="img/logo.png" style="width:20%;"></a>
+          </div>
+
+          <div class="collapse navbar-collapse  navbar-ex1-collapse "style=" margin-top: 50px; ">
+              <ul class="nav navbar-nav">
+                <li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle downwid" data-toggle="dropdown" >LOCATION<br>地區</a>
+                      <ul class="dropdown-menu ">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                      </ul>
+                    </li>
+                </li>
+                <li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle downwid" data-toggle="dropdown">PRICE<br>價位</a>
+                      <ul class="dropdown-menu ">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                      </ul>
+                  </li>
+                </li>
+                <li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle downwid" data-toggle="dropdown">FOODTYPE<br>美食類型</a>
+                      <ul class="dropdown-menu ">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                      </ul>
+                  </li>
+                </li>
+
+                <li>
+                  <br>
+                  <input type="text" class="form-control" id="invitecode" placeholder="請輸入邀請碼">
+                </li>
+
+
+
+              </ul>
+          </div>
+        </nav><!-- nav -->
+      </div><!-- nav -->
+      
+      <div class="container inthediv">
+          <div class="container-fluid">
+          <div class="col-md-7 restaurantpic" >
+            <div class=" col-md-12" style=" padding-left: 0px;">
+                <div class="respic">
+                <ul>
+                  <li><a style="background-image: url(img/3.jpg);"><img src=""></a></li>
+                  <li><a style="background-image: url(img/4.jpg);"><img src=""></a></li>
+                  <li><a style="background-image: url(img/5.jpg);"><img src=""></a></li>
+                </ul>
+                  <a href="#" style="position: absolute; opacity: 0; z-index: 0;"><img src="img/3.jpg"></a>
+                  <a href="#" style="position: absolute; opacity: 0; z-index: 0;"><img src="img/4.jpg"></a>
+                  <a href="#" style="position: absolute; opacity: 1; z-index: 10;"><img src="img/5.jpg"></a>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 restaurantinfo">
+            <div class="col-md-12"><p class="Rname">店名店名店名店</p><p class="Branch">分店名分店名分店</p><hr></div>
+
+            <div class="infobox col-md-12">
+
+              <div class="col-md-3 infotitle "><i class="fa fa-calendar-o"></i></div><div class="col-md-9" id="Ropentime">平日8:00-22:00<br>例假日7:00-23:00<br></div>
+              <div class="col-md-3 infotitle"><i class="fa fa-map-marker"></i></div><div class="col-md-9" id="Radd">高雄市三民區建工路415號</div>
+              <div class="col-md-3 infotitle"><i class="fa fa-phone"></i></div><div class="col-md-9" id="Rtel">(07)381-4526</div>
+            </div>
+              <a href="#" class="col-md-12 reservebtm">我要訂位</a>
+          </div>
+          </div>
+          
+          
+
+
+
+
+          <div id="fullpage">
+            <div class="section" >
+              <div class="slide"><!-- 餐廳介紹 -->
+                <div class="hrword">
+                  <div class="hrword-word">餐廳介紹</div>
+                </div>
+                <div class="container" style="margin-left: 50px; ">
+                  安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>安<br>
+                </div>
+              </div><!-- 餐廳介紹 -->
+              <div class="slide"><!-- 餐廳menu -->
+                <div class="hrword">
+                  <div class="hrword-word">menu</div>
+                </div>
+                <section class="work-section container" id="sort" style="margin-left: 40px; ">
+                                  <div class="col-md-3 sort">
+                                      <ul>
+                                            <li><a href="#sort01">前菜</a></li>
+                                            <li><a href="#sort02">湯品</a></li>
+                                            <li><a href="#sort03">飲品</a></li>
+                                            <li><a href="#sort04">甜點</a></li>
+                                            <li><a href="#sort05">其他</a></li>
+                                      </ul>
+                                  </div>
+                                  <div class="col-md-9">
+
+                                      <section id="sort01"><!-- 前菜start -->
+                                          <div class="book" id="b1">
+                                              <div title="first page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/salad.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">前菜1</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div  title="second page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/salad.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">前菜2</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="third page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/salad.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">前菜3</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="fourth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/salad.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">前菜4</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="fifth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/salad.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">前菜5</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="sixth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/salad.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">前菜6</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="seventh page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/salad.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">前菜7</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="eighth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/salad.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">前菜8</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+
+                                          </div>
+                                      </section><!-- 前菜end -->
+                                      <section id="sort02"><!-- 湯品start -->
+                                            <div class="book" id="b2">
+                                              <div title="first page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/soup.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">湯品1</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="second page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/soup.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">湯品2</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="third page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/soup.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">湯品3</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="fourth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/soup.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">湯品4</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="fifth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/soup.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">湯品5</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="sixth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/soup.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">湯品6</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="seventh page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/soup.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">湯品7</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="eighth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/soup.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">湯品8</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </section><!-- 湯品end -->
+
+                                      <section id="sort03"><!-- 飲品start -->
+                                            <div class="book" id="b3">
+                                              <div title="first page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/drink.png" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">飲品1</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="second page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/drink.png" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">飲品2</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="third page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/drink.png" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">飲品3</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="fourth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/drink.png" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">飲品4</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="fifth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/drink.png" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">飲品5</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="sixth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/drink.png" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">飲品6</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="seventh page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/drink.png" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">飲品7</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="eighth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/drink.png" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">飲品8</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </section><!-- 飲品end -->
+
+                                      <section id="sort04"><!-- 甜點start -->
+                                            <div class="book" id="b4">
+                                              <div title="first page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/dessert.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">甜點1</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="second page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/dessert.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">甜點2</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="third page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/dessert.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">甜點3</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="fourth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/dessert.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">甜點4</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="fifth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/dessert.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">甜點5</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="sixth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/dessert.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">甜點6</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="seventh page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/dessert.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">甜點7</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="eighth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/dessert.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">甜點8</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </section><!-- 飲品end -->
+
+                                      <section id="sort05"><!-- 其他start -->
+                                            <div class="book" id="b5">
+                                              <div title="first page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/other.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">其他1</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="second page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/other.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">其他2</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="third page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/other.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">其他3</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="fourth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/other.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">其他4</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="fifth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/other.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">其他5</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="sixth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/other.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">其他6</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="seventh page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/other.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">其他7</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div title="eighth page">
+                                                  <div class="meals container-fluid">
+                                                    <a class="link" href="#" title="title" style="border-color: rgb(229, 229, 229);">
+                                                      <img src="img/other.jpg" alt="img" style="left: 0px;">
+                                                    </a>
+                                                    <h3 class="title">
+                                                      <a href="#" title="title">其他8</a>
+                                                    </h3>
+                                                    <div class="content">
+                                                      <p>其他資訊</p>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </section><!-- 其他end --> 
+
+                                  </div>
+                </section>
+              </div><!-- 餐廳menu -->
+
+            </div>
+          </div>
+      </div><!-- inthediv -->
+</div>
+</body>
+
+
+<footer style='background-color:rgba(0,0,0,0.8);'>
+<div>Enjoy eat! © 2015.</div>
+</footer>
+
+</html>
+                       <!-- <section>
+                                <div id="mybook">
+                                    <div title="first page">
+                                        <h3>Page 1</h3>
+                                    </div>
+                                    <div title="second page">
+                                        <h3>Page 2</h3>
+                                    </div>
+                                    <div title="third page">
+                                        <h3>Page 3</h3>
+                                    </div>
+                                    <div title="fourth page">
+                                        <h3>Page 4</h3>
+                                    </div>
+                                    <div title="fifth page">
+                                        <h3>Page 5</h3>
+                                    </div>
+                                    <div title="sixth page">
+                                        <h3>Page 6</h3>
+                                    </div>
+                                    <div title="seventh page">
+                                        <h3>Page 7</h3>
+                                    </div>
+                                    <div title="eighth page">
+                                        <h3>Page 8</h3>
+                                    </div>
+                                </div>
+                            </section> 書的架構-->
+
+
+    <!-- <section class="work-section container" id="meal">
+              <header class="">
+                  <div class="">
+                      <ul class="">
+                          <li><a href="#meal01">餐廳介紹</a></li>
+                          <li><a href="#meal02">餐廳菜單</a></li>
+                      </ul>
+                  </div>
+              </header>
+
+              <div>
+                  <section id="meal01">
+                    work01
+                  </section>
+
+
+                  <section id="meal02">
+                    work02
+                    
+                  </section>
+              </div>
+          </section> -->

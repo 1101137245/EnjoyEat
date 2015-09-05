@@ -1,0 +1,813 @@
+
+body { 
+    background-image: url(../img/upfeathers.png);
+    background-repeat: repeat; 
+    background-attachment: fixed;
+    -moz-background-size:auto;        /*for Firefox*/
+    -webkit-background-size:auto;        /*for Google Chrome、Safari*/
+    -o-background-size:auto;        /*for Opera*/
+    background-size:auto;        /*for IE*/
+    font-family:微軟正黑體;
+    font-family: 'Open Sans', sans-serif;
+    }
+.info{
+	border-left: 10px solid black;
+}
+
+
+/*餐廳照片輪播*/
+  .respic {
+    width: 100%;
+    height: 380px;
+    border: 0px solid #333;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  .respic * {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  .respic a img{
+    width: 100%;
+  }
+  .respic ul, .respic li {
+    list-style: none;
+  }
+  .respic ul {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 9999;
+  }
+  .respic li {
+    float: left;
+    margin-left: 5px;
+  }
+  .respic li a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: transparent;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size:cover;
+  }
+  .respic li a:hover {
+    border: 1px solid white;
+  }
+
+/*figure*/
+
+
+section.Restaurant-info-resvervation {
+  padding: 10px 20px;
+}
+section.Restaurant-info-resvervation .restaurant-title {
+  border-left: 3px solid #B22222;
+  color: black;
+  padding: 5px 0 5px 10px;
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  line-height: 1em;
+}
+section.Restaurant-info-resvervation figure {
+  position: relative;
+  width: 100%;
+  max-width: 722px;
+  height: 250px;
+  overflow: hidden;
+}
+section.Restaurant-info-resvervation figure img {
+  position: absolute;
+  top: -50%;
+  width: 100%;
+}
+
+
+@-moz-keyframes img-move {
+  from {top: -20%;}
+  to {top: -10%;}
+}
+
+@-ms-keyframes img-move {
+  from {top: -20%;}
+  to {top: -10%;}
+}
+
+@-webkit-keyframes img-move {
+  from {top: -20%;}
+  to {top: -10%;}
+}
+
+@media (min-width: 1001px) {
+  section.Restaurant-info-resvervation figure img {
+    position: absolute;
+    top: -50%;
+    -moz-animation: linear 5s img-move infinite alternate;
+    -ms-animation: linear 5s img-move infinite alternate;
+    -webkit-animation: linear 5s img-move infinite alternate;
+  }
+}
+
+@media (max-width: 1001px) {
+  
+  section.Restaurant-info-resvervation figure img {
+    position: relative;
+  }
+
+
+}
+
+.restaurantinfo{
+  background-image: url(../img/upfeathers.png);
+/*  background-color: rgba(240, 239, 238, 0.8);
+*/  -webkit-box-shadow: 2px -2px 5px gray inset;
+  -moz-box-shadow: 2px -2px 5px gray inset;
+  box-shadow: 2px -2px 5px gray inset;
+  padding-bottom: 10px; padding-top: 10px; 
+  top: 30px;   /*background-image:url('../img/note.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size:cover;*/
+}
+
+div p {
+    display: inline;
+}
+.Rname{
+  font-size:20pt;
+}
+.Branch
+{
+  font-size: 16pt;
+   margin-left: 30px; 
+
+}
+.infotitle{
+  text-align: right;
+  font-weight: bold;
+}
+.restaurantinfo .col-md-9{
+  
+  margin-bottom: 6px; 
+}
+.infobox{
+
+}
+
+.restaurantpic{
+   padding-right: 0px; padding-left: 0px; 
+     top: 20px; 
+}
+
+.reservebtm{
+  color: white;
+  margin-bottom: 10px;
+  -moz-box-shadow: -1px 10px 8px -2px gray;
+  -webkit-box-shadow: -1px 10px 8px -2px gray;
+  box-shadow: -1px 10px 8px -2px gray;
+  background-color:rgba(178, 34, 34,0.8);
+  -moz-border-radius:20px;
+  -webkit-border-radius:20px;
+  border-radius:20px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:21px;
+  font-weight:bold;
+  text-decoration:none;
+  text-align: center;
+  padding-top: 10px; 
+  padding-bottom: 10px; 
+  padding-right: 0px; 
+  padding-left: 0px; 
+  margin-top: 10px;
+  width: 100%;
+}
+.reservebtm:hover {
+  background-color:rgba(178, 34, 34,0.5);
+  color: black;
+}
+.reservebtm:active {
+  position:relative;
+  top:1px;
+}
+.Rhr{
+   margin-top: 50px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Base */
+ul { padding-left: 0; }
+ul li { list-style-type: none; }
+a { color: inherit; text-decoration: none; }
+img { vertical-align: middle; }
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+
+/*
+ * Work section
+ */
+
+.work-section {
+    background-color: transparent;
+    position: relative;
+    z-index: 10;
+}
+.no-boxshadow .work-section {
+    border-bottom: 1px solid rgb(24, 24, 24);
+}
+.work-section .section-header {
+    line-height: 70px;
+    text-transform: uppercase;
+    position: relative;
+}
+.no-boxshadow .work-section .section-header {
+    border-top: 1px solid rgb(204, 204, 204);
+}
+.work-section .section-header > .inner {
+    margin: auto;
+    width: 100%;
+    position: relative;
+}
+.work-section h2 {
+    float: left;
+    font-size: 30px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+/* タブ */
+.work-section .tabs-nav {
+    float: right;
+    letter-spacing: 1px;
+}
+.work-section .tabs-nav li {
+    float: left;
+    position: relative;
+}
+.work-section .tabs-nav a {
+    display: block;
+    outline: none;
+    position: relative;
+    text-align: center;
+    width: 120px;
+    z-index: 10;
+}
+.work-section .tabs-nav .ui-tabs-active a {
+    color: rgb(255, 255, 255);
+}
+
+/* ハイライト */
+.work-section .tabs-highlight {
+    background-color: rgb(51, 51, 51);
+    height: 100%;
+    position: absolute;
+    width: 120px;
+}
+.work-section .tabs-highlight:after {
+    background: url(../img/sprites.png) no-repeat 0 0;
+    content: "";
+    position: absolute;
+    width: 37px;
+    height: 19px;
+    bottom: -19px;
+    left: 50%;
+    margin-left: -18px;
+    z-index: 10;
+}
+
+
+/* パネル */
+.work-section .section-body {
+    height: auto;
+    position: relative;
+}
+.work-section .section-body .image-wrapper {
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+.work-section .section-body .image-wrapper img {
+    position: absolute;
+    left: 50%;
+    margin-left: -800px;
+}
+
+.work-section .section-body .content {
+    color: rgb(255, 255, 255);
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+.work-section .section-body .content > .inner {
+    position: absolute;
+    width: 250px;
+}
+.work-section .section-body #work01 .content > .inner {
+    top: 20px;
+    left: 680px;
+}
+.work-section .section-body #work02 .content > .inner {
+    top: 140px;
+    left: 40px;
+}
+.work-section .section-body #work03 .content > .inner {
+    top: 50px;
+    left: 50px;
+}
+.work-section .section-body #work04 .content > .inner {
+    top: 50px;
+    left: 50px;
+}
+.work-section .section-body #work05 .content > .inner {
+    top: 50px;
+    left: 680px;
+}
+.work-section .section-body .title {
+/*    font-size: 50px;
+*/    font-weight: normal;
+    text-transform: uppercase;
+}
+.work-section .section-body .description {
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+
+
+
+
+
+.sort ul li{
+  text-align: center;
+  color: black;
+  font-size: 15pt;
+  line-height: 60px;
+  background-color: black;
+}
+
+#sort{
+   top: 20px; 
+}
+.sort ul li a{
+  color:white; 
+}
+.sort ul li:hover{
+  color: black;
+  background-color: green;
+}
+
+
+
+
+
+/*各餐點顯示*/
+  .meals {
+    overflow: hidden;
+    width: 225px;
+    padding: 5px;
+  }
+  .meals img {
+    width: 120%;
+    position: relative;
+    border: none;
+    vertical-align: middle;
+  }
+  .meals h3 {
+    margin: 0;
+  }
+  .meals a.link {
+    border: 3px solid #e5e5e5;
+    overflow: hidden;
+    display: block;
+  }
+  .meals h3 a {
+    color: #000;
+    display: block;
+    text-decoration: none;
+    margin: 10px 15px 8px 5px;
+  }
+  .meals .content {
+    margin: 10px 0 0 5px;
+  }
+  .meals p{
+    color:rgba(178, 34, 34,1);;
+  }
+
+/*餐點切換*/

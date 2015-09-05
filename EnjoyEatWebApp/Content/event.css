@@ -1,0 +1,35 @@
+.friend{
+	padding-top: 10px; padding-bottom: 10px; 
+	/*	 border:1px solid black;;*/
+}
+.friend:hover{
+	background-color: rgba(122,221,255,0.3);
+}
+.friendname{
+	display:inline;
+}
+.friendpic{
+	display:inline;
+	padding-left: 5px; padding-right: 5px; 
+
+}
+
+.eventtitle{
+	width: 100%;
+}
+.eventinfo{
+	width: 70%;
+	float: left;
+	padding-left: 5px; padding-right: 5px; 
+
+}
+.eventvote{
+	width: 30%;
+	float: left;
+	padding-left: 5px; padding-right: 5px; 
+}
+.info{
+	border-top:1px solid black;
+	border-bottom: 1px solid black; 
+	padding-top: 30px; padding-bottom: 30px; margin-top: 20px; margin-bottom: 20px; 
+}

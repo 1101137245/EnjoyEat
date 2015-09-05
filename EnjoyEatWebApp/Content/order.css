@@ -1,0 +1,128 @@
+.cart{
+	border: 2px solid gray;
+	padding: 10px 0;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	border-radius: 18px;
+	
+}
+.cartback{
+	background-color: gray;
+	height: 30px;
+	text-align: center;
+	font-size: 14pt;
+	line-height: 30px;
+	color: white;
+}
+
+.goorder{
+	border: 1px solid gray;
+	padding: 5px 0;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	border-radius: 18px;
+	width: 30%;
+	text-align: center;
+	margin: auto;
+}
+.goorder:hover{
+	border: 1px solid black;
+
+}
+.goorder:active{
+	border: 2px solid red;
+
+}
+
+.class{
+	font-size: 20pt;
+	color: red;
+}
+
+.item{
+	font-size: 15pt;
+	 padding-top: 5px; padding-bottom: 5px; 
+	 width: 100%;
+}
+
+.item p i:{
+	color: black;
+}
+
+.item p i:hover{
+	color: red;
+}
+
+.item p i:active{
+	color: gray;
+}
+
+.inthecart{
+	 padding-top: 10px; 
+	 padding-left: 10px; padding-right: 10px; 
+}
+
+.inline{
+	display:inline
+
+}
+
+.orderdetail{
+	text-align: right;
+}
+.rr{
+	text-align: right;
+}
+
+.mtitle{
+	font-size: 19px;
+	text-align: center;
+}
+
+.mprice{
+	font-size: 19px;
+	color: red;
+	text-align: right;
+}
+
+.hm i,p{
+	font-size: 20px;
+	text-align: center;
+}
+.hm p{
+ padding-left: 30px; padding-right: 30px; 
+}
+
+
+.hm{
+	text-align: center;
+}
+
+.mdetail{
+	 padding-top: 10px; 
+	 padding-bottom: 10px; 
+	 text-align: center;
+}
+.oneed{
+	 padding-top: 10px; 
+}
+
+
+/*input*/
+input{
+	width: 100%;
+}
+input[type="text"] {
+  border: solid 1px #fff;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+  box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+
+
+.link img{
+	max-height: 167px;
+}
