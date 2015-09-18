@@ -86,7 +86,6 @@ namespace EnjoyEatCore.Dao.Implement.SingleDao
         /// </summary>
         /// <param name="obj">資料物件</param>
         /// <param name="strOrderByField">OrderBy條件</param>
-        /// <param name="strTableSourceFlag">來源Table的註記</param>
         /// <param name="strFunctionName">Where條件的method name</param>
         public IList<T> ReadData<T>(T obj, string[] strOrderByField = null, string strFunctionName = "PK_")
         {

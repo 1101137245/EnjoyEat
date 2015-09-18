@@ -34,6 +34,7 @@ namespace EnjoyEatCore.Dao.Interface
         /// 根據傳入的DOMAIN產生撈取語法
         /// </summary>
         /// <param name="obj">資料物件</param>
+        /// <param name="strOrderByField">OrderBy條件</param>
         /// <param name="strFunctionName">Where條件的method name</param>
         IList<T> ReadData<T>(T obj, string[] strOrderByField = null, string strFunctionName = "PK_");
 
