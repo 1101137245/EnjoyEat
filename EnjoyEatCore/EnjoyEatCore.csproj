@@ -89,7 +89,7 @@
     <Compile Include="DomainObject\TableDomainObject\MealClassification.cs" />
     <Compile Include="DomainObject\TableDomainObject\MemberFeedbackForm.cs" />
     <Compile Include="DomainObject\TableDomainObject\MemberFeedbackFormChoose.cs" />
-    <Compile Include="DomainObject\TableDomainObject\Member_ID.cs" />
+    <Compile Include="DomainObject\TableDomainObject\Member.cs" />
     <Compile Include="DomainObject\TableDomainObject\Order.cs" />
     <Compile Include="DomainObject\TableDomainObject\Orderdetail.cs" />
     <Compile Include="DomainObject\TableDomainObject\Region.cs" />
@@ -101,9 +101,11 @@
     <Compile Include="DomainObject\TableDomainObject\RestaurantFeedbackForm.cs" />
     <Compile Include="DomainObject\TableDomainObject\RestaurantFeedbackFormOption.cs" />
     <Compile Include="DomainObject\TableDomainObject\RestaurantManage.cs" />
+    <Compile Include="DomainObject\TableDomainObject\RestaurantOrderTime.cs" />
     <Compile Include="DomainObject\TableDomainObject\RestaurantPicture.cs" />
     <Compile Include="DomainObject\TableDomainObject\RestaurantTable.cs" />
     <Compile Include="DomainObject\TableDomainObject\SocialActivity.cs" />
+    <Compile Include="DomainObject\TableDomainObject\SocialActivityBoard.cs" />
     <Compile Include="DomainObject\TableDomainObject\SocialActivityMember.cs" />
     <Compile Include="DomainObject\TableDomainObject\Track.cs" />
     <Compile Include="DomainObject\TableDomainObject\Vote.cs" />

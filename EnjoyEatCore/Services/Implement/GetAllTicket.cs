@@ -13,6 +13,7 @@ namespace EnjoyEatCore.Services.Implement
     {
         public IList<Ticket> GetAllTicket()
         {
+
             IList<Ticket> Ticket = TicketDao.GetAllTicket();
             Ticket[1].Aboard = "0";
             return Ticket;

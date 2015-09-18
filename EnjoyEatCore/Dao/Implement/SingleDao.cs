@@ -85,14 +85,16 @@ namespace EnjoyEatCore.Dao.Implement.SingleDao
         /// 根據傳入的DOMAIN產生撈取語法
         /// </summary>
         /// <param name="obj">資料物件</param>
+        /// <param name="strOrderByField">OrderBy條件</param>
+        /// <param name="strTableSourceFlag">來源Table的註記</param>
         /// <param name="strFunctionName">Where條件的method name</param>
-        public IList<T> ReadData<T>(T obj, string[] strOrderByField = null, string strTableSourceFlag = "", string strFunctionName = "PK_")
+        public IList<T> ReadData<T>(T obj, string[] strOrderByField = null, string strFunctionName = "PK_")
         {
             IDbParameters parameters = CreateDbParameters();
-            StringBuilder sql = new StringBuilder();
+            StringBuilder strSql = new StringBuilder();
+            int index_1 = 0;
             string strTag = "@";
-
-            sql = SqlBuilder.Query(obj, strOrderByField, strTableSourceFlag);
+            strSql = SqlBuilder.Query(obj);
 
             //根據strFunctionName產生where條件
 
@@ -108,7 +110,6 @@ namespace EnjoyEatCore.Dao.Implement.SingleDao
                 }
             }
 
-            //根據FunctionName的傳入參數組出Where條件
             if (!string.IsNullOrEmpty(strFunctionName))
             {
                 //取得物件的Funtion
@@ -118,16 +119,52 @@ namespace EnjoyEatCore.Dao.Implement.SingleDao
                     {
                         foreach (ParameterInfo objParameter in objMethod.GetParameters())
                         {
-                            sql.AppendLine(" AND " + objParameter.Name + " = " + strTag + objParameter.Name);
+                            strSql.AppendLine("AND " + objParameter.Name + " = " + strTag + objParameter.Name + " ");
                         }
                     }
                 }
             }
 
-            SetParameters(sql.ToString(), obj, ref parameters);
+            //根據FunctionName的傳入參數組出OrderBy條件
+            if (strOrderByField != null)
+            {
+                foreach (string field in strOrderByField)
+                {
+                    if (index_1 == 0)
+                    {
+                        strSql.AppendLine("ORDER BY ");
+                        strSql.AppendLine(field + " ");
+                    }
+                    else
+                    {
+                        strSql.AppendLine(", " + field + " ");
+                    }
+                    index_1 = 1;
+                }
+            }
 
-            return base.QueryWithRowMapper<T>(CommandType.Text, Convert.ToString(sql), new GenerateRowMapper<T>(), parameters);
+            SetParameters(strSql.ToString(), obj, ref parameters);
+
+            return base.QueryWithRowMapper<T>(CommandType.Text, Convert.ToString(strSql), new GenerateRowMapper<T>(), parameters);
         }
+
+        ///// <summary>
+        ///// 根據傳入的DOMAIN產生撈取語法(無參數)
+        ///// </summary>
+        ///// <param name="obj">資料物件</param>
+        ///// <param name="strOrderByField">OrderBy條件</param>
+        ///// <param name="strTableSourceFlag">來源Table的註記</param>
+        //public IList<T> ReadDataNoTerm<T>(T obj, string[] strOrderByField = null, string strTableSourceFlag = "")
+        //{
+        //    IDbParameters parameters = CreateDbParameters();
+        //    StringBuilder sql = new StringBuilder();
+
+        //    sql = SqlBuilder.Query(obj, strOrderByField, strTableSourceFlag);
+
+        //    SetParameters(sql.ToString(), obj, ref parameters);
+
+        //    return base.QueryWithRowMapper<T>(CommandType.Text, Convert.ToString(sql), new GenerateRowMapper<T>(), parameters);
+        //}
 
         #endregion ReadData
     }

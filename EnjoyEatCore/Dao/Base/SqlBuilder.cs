@@ -15,56 +15,43 @@ namespace EnjoyEatCore.Dao.Base
     {
         public class SqlBuilder
         {
-            public static StringBuilder Query(object obj, string[] strOrderByField = null, string strTableSourceFlag = "")
+            /// <summary>
+            /// 自動產生SELECT語法
+            /// </summary>
+            /// <param name="obj">資料物件</param>
+            /// <returns></returns>
+            public static StringBuilder Query(object obj)
             {
                 BaseDao objBaseDao = new BaseDao();
                 StringBuilder strSql = new StringBuilder();
                 string strTableName = string.Empty;
+                StringBuilder strFieldName = new StringBuilder();
                 int index = 0;
-                int index_1 = 0;
-                strSql.AppendLine("SELECT ");
-
-                foreach (PropertyInfo objItem  in obj.GetType().GetProperties())
+                
+                foreach (PropertyInfo objItem in obj.GetType().GetProperties())
                 {
                     //將TABLE_NAME記錄至strTableName中
                     if (objItem.Name == "TABLE_NAME")
                     {
-                        strTableName = objItem.GetValue(obj, null).ToString() + strTableSourceFlag;
+                        strTableName = objItem.GetValue(obj, null).ToString();
                     }
                     else
                     {
                         if (index == 0)
                         {
-                            strSql.AppendLine(" " + objItem.Name + " ");
+                            strFieldName.AppendLine(objItem.Name + " ");                            
                         }
                         else
                         {
-                            strSql.AppendLine(" , " + objItem.Name + " ");
+                            strFieldName.AppendLine(", " + objItem.Name + " ");                           
                         }
-
                         index = 1;
                     }
                 }
-
-                strSql.AppendLine("FROM " + strTableName + "");
-                strSql.AppendLine("WHERE 1=1");
-
-                if (strOrderByField != null)
-                {
-                    foreach (string field in strOrderByField)
-                    {
-                        if (index_1 == 0)
-                        {
-                            strSql.AppendLine(" ORDER BY ");
-                            strSql.AppendLine(field + " ");
-                        }
-                        else
-                        {
-                            strSql.AppendLine(" , " + field + " ");
-                        }
-                        index_1 = 1;
-                    }
-                }
+                strSql.AppendLine("SELECT ");
+                strSql.AppendLine(strFieldName + " ");               
+                strSql.AppendLine("FROM " + strTableName + " ");
+                strSql.AppendLine("WHERE 1=1 ");                
 
                 return strSql;
             }
@@ -100,26 +87,26 @@ namespace EnjoyEatCore.Dao.Base
                             {
                                 if (objItem.GetValue(obj, null) != null && objItem.GetValue(obj, null).ToString() == strDateString)
                                 {
-                                    strFieldName.AppendLine("     " + objItem.Name);
-                                    strParameter.AppendLine("     " + strDateString);
+                                    strFieldName.AppendLine(objItem.Name + "  ");
+                                    strParameter.AppendLine(strDateString + "  ");
                                 }
                                 else
                                 {
-                                    strFieldName.AppendLine("     " + objItem.Name);
-                                    strParameter.AppendLine("     " + strTag + objItem.Name);
+                                    strFieldName.AppendLine(objItem.Name + "  ");
+                                    strParameter.AppendLine(strTag + objItem.Name + "  ");
                                 }
                             }
                             else
                             {
                                 if (objItem.GetValue(obj, null) != null && objItem.GetValue(obj, null).ToString() == strDateString)
                                 {
-                                    strFieldName.AppendLine("   , " + objItem.Name);
-                                    strParameter.AppendLine("   , " + strDateString);
+                                    strFieldName.AppendLine(", " + objItem.Name + "  ");
+                                    strParameter.AppendLine(", " + strDateString + "  ");
                                 }
                                 else
                                 {
-                                    strFieldName.AppendLine("   , " + objItem.Name);
-                                    strParameter.AppendLine("   , " + strTag + objItem.Name);
+                                    strFieldName.AppendLine(", " + objItem.Name + "  ");
+                                    strParameter.AppendLine(", " + strTag + objItem.Name + "  ");
                                 }
                             }
                             index = 1;
@@ -128,13 +115,13 @@ namespace EnjoyEatCore.Dao.Base
                 }
 
                 strSql.AppendLine("INSERT INTO " + strTableName + " ");
-                strSql.AppendLine(" ( ");
+                strSql.AppendLine("( ");
                 strSql.AppendLine(strFieldName.ToString());
-                strSql.AppendLine(" )");
-                strSql.AppendLine("VALUES");
-                strSql.AppendLine(" ( ");
+                strSql.AppendLine(") ");
+                strSql.AppendLine("VALUES ");
+                strSql.AppendLine("( ");
                 strSql.AppendLine(strParameter.ToString());
-                strSql.AppendLine(" )");
+                strSql.AppendLine(") ");
 
                 return strSql;
             }
@@ -149,8 +136,8 @@ namespace EnjoyEatCore.Dao.Base
             {
                 BaseDao objBaseDao = new BaseDao();
                 StringBuilder strSql = new StringBuilder();
-                string strTableName = string.Empty;
                 StringBuilder strParameter = new StringBuilder();
+                string strTableName = string.Empty;
                 string strTag = "@";
                 List<string> liPrimaryKey = new List<string>();     //暫存PK值
                 int index = 0;
@@ -189,22 +176,22 @@ namespace EnjoyEatCore.Dao.Base
                             {
                                 if (objItem.GetValue(obj, null) != null && objItem.GetValue(obj, null).ToString() == strDateString)
                                 {
-                                    strParameter.AppendLine(objItem.Name + "= " + strDateString);
+                                    strParameter.AppendLine(objItem.Name + "= " + strDateString + " ");
                                 }
                                 else
                                 {
-                                    strParameter.AppendLine(objItem.Name + "= " + strTag + objItem.Name);
+                                    strParameter.AppendLine(objItem.Name + "= " + strTag + objItem.Name + " ");
                                 }
                             }
                             else
                             {
                                 if (objItem.GetValue(obj, null) != null && objItem.GetValue(obj, null).ToString() == strDateString)
                                 {
-                                    strParameter.AppendLine(" , " + objItem.Name + "= " + strDateString);
+                                    strParameter.AppendLine(", " + objItem.Name + " = " + strDateString + " ");
                                 }
                                 else
                                 {
-                                    strParameter.AppendLine(" , " + objItem.Name + "= " + strTag + objItem.Name);
+                                    strParameter.AppendLine(", " + objItem.Name + " = " + strTag + objItem.Name + " ");
                                 }
                             }
                             index = 1;
@@ -215,7 +202,7 @@ namespace EnjoyEatCore.Dao.Base
                 strSql.AppendLine("UPDATE " + strTableName + " ");
                 strSql.AppendLine("SET ");
                 strSql.AppendLine(strParameter.ToString());
-                strSql.AppendLine(" WHERE 1=1");
+                strSql.AppendLine("WHERE 1=1 ");
 
                 //根據FunctionName的傳入參數組出Where條件
                 if (!string.IsNullOrEmpty(strFunctionName))
@@ -239,7 +226,8 @@ namespace EnjoyEatCore.Dao.Base
             /// <summary>
             /// Delete
             /// </summary>
-            /// <param name="obj">資料物件</param>
+            /// <param name="obj">資料物件</param>            
+            /// <param name="strFunctionName">Where條件的method name</param>
             /// <returns></returns>
             public static StringBuilder Delete(object obj, string strFunctionName = "PK_")
             {
@@ -256,7 +244,7 @@ namespace EnjoyEatCore.Dao.Base
                     }
                 }
 
-                strSql.AppendLine("DELETE " + strTableName);
+                strSql.AppendLine("DELETE " + strTableName + " ");
                 strSql.AppendLine("WHERE 1=1 ");
 
                 //若strFunctionName為empty或null,則預設為該物件PK_開頭的method name
@@ -281,7 +269,7 @@ namespace EnjoyEatCore.Dao.Base
                         {
                             foreach (ParameterInfo objParameter in objMethod.GetParameters())
                             {
-                                strSql.AppendLine(" AND " + objParameter.Name + " = " + strTag + objParameter.Name);
+                                strSql.AppendLine("AND " + objParameter.Name + " = " + strTag + objParameter.Name + " ");
                             }
                         }
                     }

@@ -19,12 +19,25 @@ namespace EnjoyEatCore.Dao.Implement.RestaurantDao
         {
 
             //string command = @"SELECT * FROM Restaurant ";
-            StringBuilder command = SqlBuilder.Query(obj);
+            StringBuilder command = SqlBuilder.Query(obj);           
             Restaurant obj1 = new Restaurant();
+            Restaurant obj2 = new Restaurant();
+            obj1.Restaurant_ID = "1";
+            obj1.Restaurant_Name = "王品";
+            obj2.Restaurant_Name = "王品";
+            obj2.Restaurant_Parking = "1";
             string[] abcd={
                          "Restaurant_ID","Restaurant_Name"
                      };
-            StringBuilder abc = SqlBuilder.Query(obj1, abcd);
+            StringBuilder abc = SqlBuilder.Query(obj1);
+
+            StringBuilder abcde = SqlBuilder.Insert(obj2);
+            StringBuilder abcdef = SqlBuilder.Delete(obj2);
+            StringBuilder abcdee = SqlBuilder.Update(obj2);
+
+            IDbParameters parameters = CreateDbParameters();
+            SetParameters(abc.ToString(), obj1, ref parameters);
+
             IList<Restaurant> restaurant = base.QueryWithRowMapper<Restaurant>(CommandType.Text, Convert.ToString(command), new GenerateRowMapper<Restaurant>());
             return restaurant;
         }

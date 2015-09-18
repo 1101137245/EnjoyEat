@@ -35,7 +35,7 @@ namespace EnjoyEatCore.Dao.Interface
         /// </summary>
         /// <param name="obj">資料物件</param>
         /// <param name="strFunctionName">Where條件的method name</param>
-        IList<T> ReadData<T>(T obj, string[] strOrderByField = null, string strTableSourceFlag = "", string strFunctionName = "PK_");
+        IList<T> ReadData<T>(T obj, string[] strOrderByField = null, string strFunctionName = "PK_");
 
     }
 }

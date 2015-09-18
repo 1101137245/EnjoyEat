@@ -149,18 +149,18 @@
     <Content Include="App_Data\ReservationOrder_log.ldf">
       <DependentUpon>ReservationOrder.mdf</DependentUpon>
     </Content>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Shared\Bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\Shared\Bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\Shared\Bootstrap\bootstrap.css" />
+    <Content Include="Content\Shared\Bootstrap\bootstrap.min.css" />
     <Content Include="Content\event.css" />
-    <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\jquery-ui.min.css" />
-    <Content Include="Content\jquery-ui.structure.min.css" />
-    <Content Include="Content\jquery.booklet.latest.css" />
-    <Content Include="Content\jquery.fullPage.css" />
-    <Content Include="Content\jquery.mobile-1.4.5.min.css" />
+    <Content Include="Content\Shared\Fontawesome\font-awesome.css" />
+    <Content Include="Content\Shared\Fontawesome\font-awesome.min.css" />
+    <Content Include="Content\Shared\Jquery\jquery-ui.min.css" />
+    <Content Include="Content\Shared\Jquery\jquery-ui.structure.min.css" />
+    <Content Include="Content\Shared\Jquery\jquery.booklet.latest.css" />
+    <Content Include="Content\Shared\Jquery\jquery.fullPage.css" />
+    <Content Include="Content\Shared\Jquery\jquery.mobile-1.4.5.min.css" />
     <Content Include="Content\main.css" />
     <Content Include="Content\nav.css" />
     <Content Include="Content\order.css" />
@@ -168,8 +168,8 @@
     <Content Include="data\data.aspx" />
     <Content Include="packages.config" />
     <Content Include="data\data.json" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\Shared\Bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Content\Shared\Bootstrap\bootstrap.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -179,22 +179,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Shared\Bootstrap\bootstrap.js" />
+    <Content Include="Scripts\Shared\Bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\index.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\jquery-2.1.0.min.js" />
-    <Content Include="Scripts\jquery-ui-1.10.3.custom.min.js" />
-    <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
-    <Content Include="Scripts\jquery-ui.min.js" />
-    <Content Include="Scripts\jquery.booklet.latest.js" />
-    <Content Include="Scripts\jquery.booklet.latest.min.js" />
-    <Content Include="Scripts\jquery.easing.1.3.js" />
-    <Content Include="Scripts\jquery.fullPage.min.js" />
-    <Content Include="Scripts\jquery.min.js" />
-    <Content Include="Scripts\jquery.mobile-1.4.5.min.js" />
-    <Content Include="Scripts\jquery.slimscroll.min.js" />
-    <Content Include="Scripts\kendowidget.js" />
+    <Content Include="Scripts\Shared\Jquery\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\Shared\Jquery\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\Shared\Jquery\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Scripts\Shared\Jquery\jquery-ui-1.10.4.min.js" />
+    <Content Include="Scripts\Shared\Jquery\jquery-ui.min.js" />
+    <Content Include="Scripts\Shared\Jquery\jquery.booklet.latest.js" />
+    <Content Include="Scripts\Shared\Jquery\jquery.booklet.latest.min.js" />
+    <Content Include="Scripts\Shared\Jquery\jquery.easing.1.3.js" />
+    <Content Include="Scripts\Shared\Jquery\jquery.fullPage.min.js" />
+    <Content Include="Scripts\Shared\Jquery\jquery.min.js" />
+    <Content Include="Scripts\Shared\Jquery\jquery.mobile-1.4.5.min.js" />
+    <Content Include="Scripts\Shared\Jquery\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\Shared\Kendo\kendowidget.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr.custom.min.js" />
     <Content Include="Scripts\npm.js" />
@@ -205,33 +205,33 @@
     <Content Include="Views\Course.html" />
     <Content Include="Views\eeindex.html" />
     <Content Include="Views\event.html" />
-    <Content Include="Views\img\1.jpg" />
-    <Content Include="Views\img\2.jpg" />
-    <Content Include="Views\img\3.jpg" />
-    <Content Include="Views\img\4.jpg" />
-    <Content Include="Views\img\5.jpg" />
-    <Content Include="Views\img\6.jpg" />
-    <Content Include="Views\img\7.jpg" />
-    <Content Include="Views\img\8.jpg" />
-    <Content Include="Views\img\bg.jpg" />
-    <Content Include="Views\img\closedhand.cur" />
-    <Content Include="Views\img\dessert.jpg" />
-    <Content Include="Views\img\drink.png" />
-    <Content Include="Views\img\fblogin.png" />
-    <Content Include="Views\img\friend.png" />
-    <Content Include="Views\img\gua.png" />
-    <Content Include="Views\img\logo.png" />
-    <Content Include="Views\img\note.png" />
-    <Content Include="Views\img\openhand.cur" />
-    <Content Include="Views\img\other.jpg" />
-    <Content Include="Views\img\salad.jpg" />
-    <Content Include="Views\img\shadow-top-back.png" />
-    <Content Include="Views\img\shadow-top-forward.png" />
-    <Content Include="Views\img\soup.jpg" />
-    <Content Include="Views\img\sprites.png" />
-    <Content Include="Views\img\title.JPG" />
-    <Content Include="Views\img\upfeathers.png" />
-    <Content Include="Views\img\木頭筆記本-02.png" />
+    <Content Include="image\1.jpg" />
+    <Content Include="image\2.jpg" />
+    <Content Include="image\3.jpg" />
+    <Content Include="image\4.jpg" />
+    <Content Include="image\5.jpg" />
+    <Content Include="image\6.jpg" />
+    <Content Include="image\7.jpg" />
+    <Content Include="image\8.jpg" />
+    <Content Include="image\bg.jpg" />
+    <Content Include="image\closedhand.cur" />
+    <Content Include="image\dessert.jpg" />
+    <Content Include="image\drink.png" />
+    <Content Include="image\fblogin.png" />
+    <Content Include="image\friend.png" />
+    <Content Include="image\gua.png" />
+    <Content Include="image\logo.png" />
+    <Content Include="image\note.png" />
+    <Content Include="image\openhand.cur" />
+    <Content Include="image\other.jpg" />
+    <Content Include="image\salad.jpg" />
+    <Content Include="image\shadow-top-back.png" />
+    <Content Include="image\shadow-top-forward.png" />
+    <Content Include="image\soup.jpg" />
+    <Content Include="image\sprites.png" />
+    <Content Include="image\title.JPG" />
+    <Content Include="image\upfeathers.png" />
+    <Content Include="image\木頭筆記本-02.png" />
     <Content Include="Views\Index.html" />
     <Content Include="Views\manage.html" />
     <Content Include="Views\order.html" />
@@ -263,7 +263,23 @@
       <Name>EnjoyEatCore</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\BSM\" />
+    <Folder Include="Content\Community\" />
+    <Folder Include="Content\Member\" />
+    <Folder Include="Content\RAO\" />
+    <Folder Include="Content\Restaurant\" />
+    <Folder Include="Scripts\BSM\" />
+    <Folder Include="Scripts\Community\" />
+    <Folder Include="Scripts\Member\" />
+    <Folder Include="Scripts\RAO\" />
+    <Folder Include="Scripts\Restaurant\" />
+    <Folder Include="Views\BSM\" />
+    <Folder Include="Views\Community\" />
+    <Folder Include="Views\Member\" />
+    <Folder Include="Views\RAO\" />
+    <Folder Include="Views\Restaurant\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -11,11 +11,19 @@ namespace EnjoyEatCore.Services.Implement.RestaurantService
 {
     public partial class RestaurantService:IRestaurantService
     {
-        public IRestaurantDao RestaurantDao { get; set; }
+        private IRestaurantDao RestaurantDao { get; set; }
+
+        private ISingleDao SingleDao { get; set; }
 
         public IList<Restaurant> GetAllRestaurant()
         {
             Restaurant obj = new Restaurant();
+            Restaurant obj2 = new Restaurant();
+            obj2.Restaurant_ID = "1";
+            string[] abcd ={
+                         "Restaurant_ID","Restaurant_Name"
+                     };
+            IList<Restaurant> Resta2 = SingleDao.ReadData(obj2, abcd);
             IList<Restaurant> restaurant = RestaurantDao.GetAllRestaurant(obj);
             return restaurant;
         }

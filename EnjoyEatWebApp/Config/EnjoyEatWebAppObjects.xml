@@ -1,29 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <objects xmlns="http://www.springframework.net">
   
+  <!--Controller-->
   <object id="ticketController" scope="request" singleton="false" type="EnjoyEatWebApp.Controllers.TicketController, EnjoyEatWebApp">
     <property name="TicketService" ref="ticketService" />
   </object>
-
-  <object id="ticketService" type="EnjoyEatCore.Services.Implement.TicketService, EnjoyEatCore">
-    <property name="TicketDao" ref="ticketDao" />
-  </object>
-
-  <object id="ticketDao" type="EnjoyEatCore.Dao.Implement.TicketDao, EnjoyEatCore">
-    <property name="AdoTemplate" ref="adoTemplate" />
-  </object>
-
+  
   <object id="restaurantController" scope="request" singleton="false" type="EnjoyEatWebApp.Controllers.RestaurantController, EnjoyEatWebApp">
     <property name="RestaurantService" ref="restaurantService" />
   </object>
 
+  <!--Service-->
+  <object id="ticketService" type="EnjoyEatCore.Services.Implement.TicketService, EnjoyEatCore">
+    <property name="TicketDao" ref="ticketDao" />
+  </object>
+
   <object id="restaurantService" type="EnjoyEatCore.Services.Implement.RestaurantService.RestaurantService, EnjoyEatCore">
     <property name="RestaurantDao" ref="restaurantDao" />
+    <property name="SingleDao" ref="singleDao" />
+  </object>
+
+  <!--設定DAO底下的所有Dao皆套用AOP機制-->
+  <!--Dao-->
+
+  <object id="singleDao" type="EnjoyEatCore.Dao.Implement.SingleDao.SingleDao, EnjoyEatCore">
+    <property name="AdoTemplate" ref="adoTemplate" />
+  </object>
+  
+  <object id="ticketDao" type="EnjoyEatCore.Dao.Implement.TicketDao, EnjoyEatCore">
+    <property name="AdoTemplate" ref="adoTemplate" />
   </object>
 
   <object id="restaurantDao" type="EnjoyEatCore.Dao.Implement.RestaurantDao.RestaurantDao, EnjoyEatCore">
     <property name="AdoTemplate" ref="adoTemplate" />
   </object>
   
-
-</objects>
+  </objects>
